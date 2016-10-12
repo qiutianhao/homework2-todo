@@ -1,3 +1,3 @@
-from app import configure_app
+from app import configured_app
 
-app = configure_app()
+app = configured_app()
