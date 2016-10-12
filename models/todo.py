@@ -6,8 +6,8 @@ import json
 
 class Todo(db.Model, ModelMixin):
     id = db.Column(db.Integer, primary_key=True)
-    task = db.Column(db.String())
-    created_time = db.Column(db.String())
+    task = db.Column(db.String(1000))
+    created_time = db.Column(db.String(30))
 
     def __init__(self, form):
         self.task = form.get('task')
