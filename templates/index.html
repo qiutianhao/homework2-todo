@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Todo</h1>
-<form action={{ url_for('todo.add') }} method="post">
-    <input name="task" placeholder="Add todo">
+<form action="{{ url_for('.add') }}" method="post">
+    <input name="task" placeholder="Add">
     <button type="submit">Add</button>
 </form>
 <table>
@@ -16,13 +16,13 @@
         <th>task</th>
         <th>created_time</th>
     </tr>
-    {% for t in todos %}
+    {% for m in ms %}
     <tr>
-        <td>{{t.id}}</td>
-        <td>{{t.task}}</td>
-        <td>{{t.created_time}}</td>
-        <td><a href={{ url_for("todo.delete",todo_id=t.id) }} >Delete</a></td>
-        <td><a href={{ url_for("todo.edit_view", todo_id=t.id) }}>Edit</a></td>
+        <td>{{m.id}}</td>
+        <td>{{m.task}}</td>
+        <td>{{m.created_time}}</td>
+        <td><a href='{{ url_for(".delete",m_id=m.id) }}'>Delete</a></td>
+        <td><a href='{{ url_for(".edit_view", m_id=m.id) }}'>Edit</a></td>
     </tr>
     {% endfor %}
 </table>

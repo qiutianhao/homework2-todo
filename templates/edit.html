@@ -6,13 +6,13 @@
 </head>
 <body>
 <div>
-    <form action={{ url_for('todo.edit', todo_id=todo.id) }} method="post">
-    <input name="task" placeholder="Edit Todo">
+    <form action="{{ url_for('.edit', m_id=m.id) }}" method="post">
+    <input name="task" placeholder="Edit">
     <button type="submit">Edit</button>
 </form>
-    {{ todo.id }}
-    {{ todo.task }}
-    {{ todo.created_time }}
+    {{ m.id }}
+    {{ m.task }}
+    {{ m.created_time }}
 </div>
 </body>
 </html>
